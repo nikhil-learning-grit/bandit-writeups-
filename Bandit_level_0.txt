@@ -1,0 +1,29 @@
+Objective: The aim of this level is to log into the game using the SSH protocol using given username and password, 
+and obtain the password for the next level from the file given there. 
+
+Steps taken: 
+Step 1: Login to the game (Level 0) using the given username(bandit0) , host ip address(bandit.labs.overthewire.org), port number(2220) and password. 
+Command used: ssh bandit0@bandit.labs.overthewire.org -p 2220 
+(This command is used to log in to every level using the password obtained in the previous level. 
+The password is supposed to be entered during the time of login to the next level after the above command is executed.)
+
+Step 2: Once logged in, we can navigate to the file containing the password and print its contents to retrieve the password. 
+Command used: 1] ls 
+              2] cat readme 
+
+Commands used: 
+1) ssh: It is used to login to a remote machine and execute commands in a remote machine. 
+Syntax: ssh username@host_ip_address -p [port_number]
+2) ls: It is used to list the contents of a directory (folder). When used without an arguement, 
+it displays the contents of the current directory or current working folder. 
+3) cat: It is used to print the contents of the argument(file) given to it. 
+Syntax: cat file_name 
+
+Concepts Learnt: 
+SSH (Secure Shell) Protocol: It is a cryptographic networking protocol. 
+It is used to share data securely over an unsecure network. 
+It is also used to login to a remote server.
+It supports password based authentication and key based authentication. 
+In the current level, password based authentication is used to login to the remote server. 
+The entered password is verified against the stored password, and hence, the authentication is provided. 
+After providing authentication, the ssh also uses symmetric encryption to systematically encrypt all the communication between client and server.
