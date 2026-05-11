@@ -1,0 +1,29 @@
+Objective: The objective of this level is to retrieve the password by printing the contents of the file
+           named "-" in the home directory. 
+
+
+Steps Taken: 
+Step 1: Login to Level 1 with the help of the username (bandit1) and password retrieved in the previous
+        level, via the ssh command. 
+        Command Used: ssh bandit1@bandit.labs.overthewire.org -p 2220
+Step 2: Print the contents of the file named "-" using the cat command.
+        Command used: cat ./"-"  
+
+
+Commands:
+1) ssh
+2) cat
+
+Concept Learnt: 
+1) Flags: The flags are used with commands (such as ls, cat, rm) in Linux,to access different featuers of the command. 
+       The flags are used with a linux command with the help of "-" as shown in the example given below. 
+       Ex: 1) ls ---> Lists the contents of current directory 
+              ls -l ---> Lists the contents of current directory in a long listing format 
+2) Relevance with command: Since, "-" is used with commands to use them with flags, for filenames beginning with "-",
+                        it is necessary to use ./ (dot-slash) as shown above in Step 2, to avoid the system from
+                        misinterpreting it as a flag and executing a different feature of the command. 
+                        
+3) In the context of this level, if we simply type "-", the systems thinks of "-" as a syntax rather than a string (filename). 
+   Thus it executes command "cat -", which takes standard input from the keyboard to print it on the screen. 
+   Hence, it is necessary to write the filename with "./" as shown in the Step 2. 
+ 
