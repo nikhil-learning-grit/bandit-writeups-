@@ -4,7 +4,7 @@ the home directory.
 Steps Taken: 
 Step 1: Login to Level 2 with the help of the username (bandit2) and password retrieved in the previous
         level, via the ssh command. 
-        Command Used: ssh bandit1@bandit.labs.overthewire.org -p 2220
+        Command Used: ssh bandit2@bandit.labs.overthewire.org -p 2220
 Step 2: Print the contents of the file named "--spaces in the file name--" using the cat command.
         Command used: cat ./--spaces\ in\ the\ file\ name-- or cat "./--spaces in the file name--" 
 
