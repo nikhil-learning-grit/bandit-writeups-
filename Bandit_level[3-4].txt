@@ -1,0 +1,31 @@
+Objective: The objective of this level is to retrieve the password from a hidden file in the inhere directory in the remote server.
+
+Steps Taken: 
+Step 1: Login to Level 3 with the help of the username (bandit3) and password retrieved in the previous
+        level, via the ssh command. 
+        Command Used: ssh bandit3@bandit.labs.overthewire.org -p 2220
+Step 2: Move to the director named inehre.  
+        Command Used: cd inhere 
+Step 3: Find and display the hidden files in the directory. 
+        Command used: ls -a 
+Step 4: Print the contents of the hidden file. 
+        Command used: cat ...Hiding-From-You
+
+Commands used: 
+1) ssh 
+2) cd (used to move through the directories)
+3) ls 
+4) cat 
+
+Concepts Learnt: 
+1) Hidden files in Linux: In its early days, the ls command used to display "." and ".." which are hardlinks used to refer to the current and  
+   the parent directory. Hardlinks are a second name for the exact some file or directory. The programmers started feeling annoyed to see "." 
+   and ".." pop up every time the "ls" command was executed. Therefore, they found a coding solution to this and programmed the "ls" command to
+   ignore the files named "." and "..". This causes the linux system to ignore any filename beginning with ".". Thus, the files whose names begin 
+   with "." are hidden in the linux operating system. 
+2) The "-a" flag with ls command: The "-a" flag used in "ls -a" command directs the system to display all the files including those starting with 
+   "." (hidden files). 
+   
+
+
+
