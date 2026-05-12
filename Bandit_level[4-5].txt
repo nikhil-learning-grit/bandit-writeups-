@@ -1,0 +1,44 @@
+Objective: The objective of this level is to retrieve the password by printing the contents of the only human-readable file in the inhere directory  
+in the remote server. 
+
+Steps Taken: 
+Step 1: Login to Level 4 with the help of the username (bandit4) and password retrieved in the previous
+        level, via the ssh command. 
+        Command Used: ssh bandit4@bandit.labs.overthewire.org -p 2220
+Step 2: Move to the director named inehre.  
+        Command Used: cd inhere 
+Step 3: Check the names of all the files in the current directory. 
+        Command used: ls 
+Step 4: Find the file type of each file recursively. (file type of files -file00, -file01,...., -file09)
+        Command used: file ./-file{00..09}    
+Step 5: Print the contents of the human-readable file (file type: ASCII text)
+        Command used: cat ./-file07
+
+Commands used: 
+1) ssh 
+2) cd 
+3) ls 
+4) file 
+
+Concepts Learnt: 
+1) The file command: It is used to find the file type of the file given to it as an argument. 
+2) Using file command for multiple files: It is a tedious work to use file command for every single file used in the directory. Therefore, it is
+   essential to use it for multiple files at once. 
+   The present level had multiple files named as "-file00, -file01,...., -file09". It can be seen that the file names differ only due to the numbers 
+   included in them, which increase from 00 to 09. In such cases the filename can be used with "{start..end}" (as showed in step 4) where "start" and
+   "end" denote the smallest and largest number present in the file names, to avoid the tedious work of providing each argument to the file command
+   manually. 
+Extra: 
+However, the files in a directory may not have the same name. In such cases, we can perform any one of the following actions: 
+1) Write multiple arguments with a single file command. 
+   Ex: file file_nameA file_nameB file_nameC ..... 
+2) Use piping and xargs command as shown in the below example: 
+   Ex: find . -type f | xargs file 
+   In this command,
+   a) find: command to print paths to objects (files) with a specific name, size or file type. 
+   b) "." represents the current directory, and directs the find command to search for objects in the current working directory.
+   c) "-type f" directs the find command to search for and print the paths for objects that are of type f (file).
+   d) "|" is called the pipe. This gives the output of the command on its left side as input to the command on its right side. In this case, the pipe "|"
+      gives the output of "find . -type f" command as input to the xargs file command. 
+   e) xargs: used to execute a command recursively for all the arguments given to the command. In this case, the xargs helps to recursively execute "file" 
+      command for all the files which are given to it, with the help of the pipe("|") and "find . -type f" command.  
