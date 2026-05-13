@@ -1,0 +1,30 @@
+Objective: THe objective of this level is to retrieve a password from a file in the inhere directory which is human-readable, 1033 bytes in size 
+and non-executable. 
+
+Steps Taken: 
+Step 1: Login to Level 5 with the help of the username (bandit5) and password retrieved in the previous
+        level, via the ssh command. 
+        Command Used: ssh bandit5@bandit.labs.overthewire.org -p 2220
+Step 2: Move to the director named inehre.  
+        Command Used: cd inhere
+Step 3: Search for the file with given requirements(human-readable, non-executable, 1033 bytes). 
+        Command Used: find . -type f -size 1033c ! -executable -exec file {} + 
+Step 4: Print the contents of the password file to retrieve the password. 
+        Command used: cat ./maybehere07/.file2
+
+Commands used: 
+1) ssh 
+2) cd 
+3) find
+4) file
+
+Concepts Learnt: 
+1) Different flags of find commmand: 
+        a) -size --> Helps to find a file of specific size (1033c represents 1033 bytes)
+        b) ! --> represents "not" (when used with -executable, it means not executable)
+        c) -executable --> helps to find the files that are executable by the user 
+        d) (-exec command {} +) --> It is used to execute the command given to it as argument on all the objects found as output to the find 
+           command. Here "{}" is a place holder for the objects, whereas + is used to append all the found objects as argument to the command, 
+           so that the command runs only once for all the objects (This reduces time of operation)
+        
+ 
