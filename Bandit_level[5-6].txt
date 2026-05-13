@@ -20,11 +20,11 @@ Commands used:
 
 Concepts Learnt: 
 1) Different flags of find commmand: 
-        a) -size --> Helps to find a file of specific size (1033c represents 1033 bytes)
-        b) ! --> represents "not" (when used with -executable, it means not executable)
-        c) -executable --> helps to find the files that are executable by the user 
-        d) (-exec command {} +) --> It is used to execute the command given to it as argument on all the objects found as output to the find 
+        a) -size --> Helps to find a file of specific size (1033c represents 1033 bytes).
+        b) ! --> it represents "not" (when used with -executable, it means not executable).
+        c) -executable --> helps to find the files that are executable by the user. 
+        d) (-exec command {} +) --> It is used to execute the command given to it as argument on all the objects found as output to the find. 
            command. Here "{}" is a place holder for the objects, whereas + is used to append all the found objects as argument to the command, 
-           so that the command runs only once for all the objects (This reduces time of operation)
+           so that the command runs only once for all the objects. (This reduces time of operation)
         
  
