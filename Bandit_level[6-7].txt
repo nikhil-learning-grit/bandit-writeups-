@@ -1,0 +1,28 @@
+Objective: The objective of this file is to retrieve the password for the next level by searching for the file (located somewhere on the server), 
+and printing its contents. The file is owned by user bandit6, user bandit7 and is 33 bytes in size.
+
+Steps Taken: 
+Step 1: Login to Level 6 with the help of the username (bandit6) and password retrieved in the previous
+        level, via the ssh command. 
+        Command Used: ssh bandit6@bandit.labs.overthewire.org -p 2220
+Step 2: Search for the required file in the whole server. 
+        Command used: find / -type f -user bandit7 -group bandit6 -size 33c 2>/dev/null
+Step 3: Print the contents of the password file found. 
+        Command used: cat /var/lib/dpkg/info/bandit7.password
+
+Commands Used: 
+1) ssh 
+2) find 
+3) cat 
+
+Concepts Learnt: 
+1) "-user" flag in find command: allows us to find the file with a specified username. 
+2) "-group" flag in find command: allows us to find the file with a specified groupname.
+3) "/" : Backslash is used with file command to search for a file on the whole server. 
+4) "2>/dev/null" : It is called as Standard Error Redirection. When we use the file commands, it gives a lot of permission denied errors. 
+    The standard error redirection, helps to send such errors to the null device, keeping our output clean. It is a part of I/O Redirection. 
+                   a) 2 represents the file descriptor for standard error. 
+                   b) > is used to redirect the error messages to a destination
+                   c) /dev/null is a special virtual machine called null device. It discards all the data sends to it. 
+    Hence, upon using the standard error redirection, no permission denied message is printed, keeping the output terminal clean, and making 
+    it easy to find the required file. 
