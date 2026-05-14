@@ -17,6 +17,7 @@ Commands used:
 2) cd 
 3) find
 4) file
+5) cat
 
 Concepts Learnt: 
 1) Different flags of find commmand: 
