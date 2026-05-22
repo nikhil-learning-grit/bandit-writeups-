@@ -1,0 +1,18 @@
+Objective: The objective of this level is to retrieve the password of the next level by printing the human-readable lines of the file data.txt 
+which are preceded by several "=" charactes.
+
+Steps Taken: 
+Step 1: Login to Level 8 with the help of the username (bandit8) and password retrieved in the previous
+        level, via the ssh command. 
+        Command Used: ssh bandit8@bandit.labs.overthewire.org -p 2220
+Step 2: Print the human-readable lines of the file data.txt that are preceded by the by several "=" characters. 
+        Command used: strings data.txt | grep "=" 
+
+Commands used: 
+1) ssh 
+2) strings 
+3) grep 
+
+Concepts learnt: 
+1) strings: this command helps us to print the human-readable chararcters in a file. It's syntax is 
+   strings [option] file_name 
