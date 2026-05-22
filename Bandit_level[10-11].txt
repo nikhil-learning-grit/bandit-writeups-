@@ -1,0 +1,17 @@
+Objective: The objective of this level is to retrieve the password from the file named as data.txt, which contains base64 encoded data. 
+
+Steps Taken: 
+Step 1: Login to Level 10 with the help of the username (bandit10) and password retrieved in the previous
+        level, via the ssh command. 
+        Command Used: ssh bandit10@bandit.labs.overthewire.org -p 2220
+Step 2: Print the contents of data.txt (which were base64 at the beginning) decoded. 
+        Command used: base64 -d data.txt 
+    
+Commands used: 
+1) ssh 
+2) base64 
+
+Concepts learnt: 
+1) base64: this command helps us to Base64 encode or decode the input given to it in the form of a file or standard input.
+   base64 command helps to encode, where as the base64 -d helps us to decode the input given to it. 
+   
