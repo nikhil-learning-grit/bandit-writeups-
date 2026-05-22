@@ -1,0 +1,22 @@
+Objective: The objective of this command is to retrieve the password for the next level by rotating the letters of the content 
+of data.txt by 13 letters. 
+
+Steps taken: 
+Step 1: Login to Level 11 with the help of the username (bandit11) and password retrieved in the previous
+        level, via the ssh command. 
+        Command Used: ssh bandit11@bandit.labs.overthewire.org -p 2220
+Step 2: Print the contents of data.txt rotated by 13 letters. 
+        Command Used: cat data.txt | tr "a-zA-Z" "n-za-mN-ZA-M" 
+
+Commands used: 
+1) ssh 
+2) cat 
+3) tr 
+
+Concepts Learnt: 
+1) tr: This command helps us to translate, squeeze and/or delete the characters from standard input, writing to standard output. 
+   Its syntax is: tr [OPTION]... STRING1 [STRING2], where [OPTION] refers to the flag that can be used with the command, STRING1 refers
+   to the characters we want to find or match, and STRING2 refers to the characters we want to replace STRING1 with. 
+   (In this level, tr "a-zA-Z" "n-za-mN-ZA-M" command directs the system to rotate the given text by 13 letters. In the set of characters
+   a-z, a-m is replaced by n-z and n-z is replaced by a-m. Same for the capital letters.)
+   
