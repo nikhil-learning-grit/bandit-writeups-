@@ -1,0 +1,24 @@
+Objective: The objective of this level is to retrieve the password by finding the only non-repeating line in the file data.txt. 
+
+Steps Taken: 
+Step 1: Login to Level 8 with the help of the username (bandit8) and password retrieved in the previous
+        level, via the ssh command. 
+        Command Used: ssh bandit8@bandit.labs.overthewire.org -p 2220 
+Step 2: Print the only non-repeating line in data.txt. 
+        Command used: cat data.txt | sort | uniq -u 
+    
+Commands used: 
+1) ssh 
+2) cat 
+3) sort 
+4) uniq 
+
+Conncepts Learnt: 
+1) sort: used to sort the lines of a text file 
+2) uniq: it is used to omit or report repeated line. But, when it is used with the flag "-u", it helps us to find out 
+   the unique lines in a text file. 
+3) Piping( " | "): It is used to connect the standard output of one command to the standar input of another command. 
+   In the command "cat data.txt | sort | uniq -u", the output of "cat data.txt" is given as input to the sort command. 
+   Subsequently, the output of sort command is given to uniq -u as input, and the output of "uniq -u" command 
+   is given as the final output. 
+   
