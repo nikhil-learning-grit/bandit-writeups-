@@ -1,0 +1,16 @@
+Objective: The objective of this level is to retrieve the password which is in a
+file named data.txt next to the word millionth. 
+
+Steps Taken: 
+Step 1: Login to Level 7 with the help of the username (bandit7) and password retrieved in the previous
+        level, via the ssh command. 
+        Command Used: ssh bandit7@bandit.labs.overthewire.org -p 2220
+Step 2: Print the line containing the word millionth in data.txt. 
+        Command used: grep "millionth" data.txt
+
+Commands used: 
+1) ssh 
+2) grep 
+
+Concepts learnt: 
+1) The grep command: It is used to search for a pattern (In this level, millionth) inside a file or across multiple files. 
