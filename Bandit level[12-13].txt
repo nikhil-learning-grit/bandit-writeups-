@@ -1,0 +1,45 @@
+Objective: The password for the next level is stored in the file data.txt, which is a hexdump 
+of a file that has been repeatedly compressed. 
+
+Steps taken: 
+Step 1: Login to Level 12 with the help of the username (bandit12) and password retrieved in 
+        the previous level, via the ssh command. 
+        Command Used: ssh bandit12@bandit.labs.overthewire.org -p 2220
+Step 2: Create a temporary directory for the level
+        (recommended, because we do not have write permissions in the home directory)
+        Command used: mktemp -d 
+Step 3: Copy the file to the temporary directory. 
+        Command used: cp data.txt [temp_directory_name]
+Step 4: Revert the hexdump content of data.txt back to binary form. 
+        Command used: xxd -r data.txt new 
+Step 5: The previous step copies the binary content to a file named new. Now, check the file type of new
+        and add the same extension to its name. 
+        Commands used: file new --> check file type of new --> gzip compressed 
+                        mv new new.gz --> rename the file and add extension gz (for gzip files)
+        This step is done because the tools like gzip and bzip accept only the files with proper 
+        extensions to perform decommpression actions. 
+Step 6: Decompress the gzip file created. 
+        Command used: gzip -d new.gz 
+Step 7: Repeat step 5 and 6 until we find the final ASCII Text file containing the required password.
+        While decompressing the file we will also find a tar file. It is an archived file. It can be 
+        unarchived with the help of following command: tar -xf new.tar 
+
+Commands used: 
+1) ssh 
+2) xxd 
+3) file 
+4) mv 
+5) mktemp -d 
+6) gzip 
+7) bzip2 
+8) tar 
+
+Concepts learnt: 
+1) tar comomand is used to archive or extract the files. Archiving a gile helps to save a file for
+   long term nd save storage space. 
+2) xxd helps to convert and revert the files between hexdump and binary. It helps us read the raw 
+   binary data stored in the computer. It is used in reverse engineering. 
+3) gzip and bzip are tools used to compress and decompress files. They'er used to compress files and 
+   save disk space on the server. 
+
+
