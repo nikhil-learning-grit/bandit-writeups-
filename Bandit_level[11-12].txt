@@ -19,4 +19,5 @@ Concepts Learnt:
    to the characters we want to find or match, and STRING2 refers to the characters we want to replace STRING1 with. 
    (In this level, tr "a-zA-Z" "n-za-mN-ZA-M" command directs the system to rotate the given text by 13 letters. In the set of characters
    a-z, a-m is replaced by n-z and n-z is replaced by a-m. Same for the capital letters.)
-   
+   The tr command teaches the concept of substitution ciphers by using one-to-one character mapping to instantly shift or swap letters.
+   This is a fundamental concept in cryptography. 
