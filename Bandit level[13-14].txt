@@ -1,0 +1,30 @@
+Objective: Retrieve the password stored in /etc/bandit_pass/bandit14 by logging in as user bandit14. 
+
+In this level, we're given the ssh private key for logging into the level 14. Once logged in as user
+bandit14, we can retrieve the password from the file /etc/bandit_pass/bandit14 
+Steps taken: 
+Step 1: Login to Level 13 with the help of the username (bandit13) and password retrieved in 
+        the previous level, via the ssh command. 
+        Command Used: ssh bandit13@bandit.labs.overthewire.org -p 2220
+        Copy the file path of ssh private key. (/home/bandit13/sshkey.private)
+Step 2: Logout of the server. 
+        Command used: exit 
+Step 3: Use secure copy protocol to transfer the ssh private key from the wargame to our local device. 
+        Command used:  scp -P 2220 bandit13@bandit.labs.overthewire.org:/home/bandit13/sshkey.private /home/user_name/
+        (Replace the user_name with your username). 
+Step 4: Use the ssh private key to login to level 14. (as user bandit14)
+        Command used: ssh -i /home/user_name/sshkey.private bandit14@bandit.labs.overthewire.org -p 2220 
+Step 5: Retrieve the password from the file /etc/bandit_pass/bandit14. 
+        Command used: cat /etc/bandit_pass/bandit14
+    
+Commands used: 
+1) ssh 
+2) scp 
+3) cat 
+4) exit 
+
+Concepts Learnt: 
+1 ) SSH login using private key: if we have the private key used for ssh stored in a file on our local device, 
+    we can connect to the device via ssh protocol using the -i flag. 
+2) Secure Copy Protocol: It is a network protocol used to transfer file securely between a remote host and local host
+   or between two remote hosts. It works entirely on the ssh protocol, therefore all the data transferred is encrypted. 
