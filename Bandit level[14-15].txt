@@ -1,0 +1,35 @@
+Objective: To retrieve the password by submitting the password of the current level to port 30000 
+on localhost.
+
+Steps Taken: 
+Step 1: Login to Level 14 with the help of the username (bandit14) and password retrieved in 
+        the previous level, via the ssh command. 
+        Command Used: ssh bandit14@bandit.labs.overthewire.org -p 2220
+Step 2: Establish a connection to port 30000 on local host. 
+        Command Used: nc -N localhost 30000 
+Step 3: Submit the password to the current level. This helps us retrieve the password for the next 
+        level. 
+
+Commands Used: 
+1) ssh 
+2) nc 
+
+Concepts learnt: 
+1) nc: it is a tool that is used to run the netcat utility on the command line. The netcat utility 
+helps us to establish connection, read and write to different machines using TCP or UDP connection. 
+The syntax for nc command is nc [options] ip_address port 
+It is also used to check for port scanning and to create a simple chat server. 
+
+
+NOTE: This level can also be solved with the help of telnet command. Telnet is an older command line 
+utility used for text based conversation from the client side over TCP. The syntax of the telnet command 
+is as follows: telnet host_name port_no. 
+The following command can be used followed by submitting the password for the current level to retrieve 
+the password required. 
+Command: telnet localhost 30000 
+
+Difference between nc and telnet: 
+nc is a versatile command line utility used for many purposes. It allows both TCP and UDP data streams, 
+whereas telnet is an older communication protocol that supports remote text-based command line sessions 
+over TCP. 
+
