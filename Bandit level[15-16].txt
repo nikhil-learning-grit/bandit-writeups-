@@ -17,7 +17,7 @@ Concepts learnt:
 1) openssl: it is a cryptography toolkit used to implement ssl and tls network protocols. It can 
 be used with various commands to perform different tasks. 
 The openssl s_client command helps us to establish a connection with a remote host. The data transfer 
-here is done with the help of ssl/tls protocols. 
+here is done with the help of TCP/UDP protocol which is encrypted using SSL/TLS. 
 
 NOTE: when a connection is established with the remote host using openssl s_client, everything that
 is typed on the keyboard is transferred to the remote server, until EOF(end of file). 
