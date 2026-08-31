@@ -1,0 +1,29 @@
+Objective: To retrieve the password for next level by submitting the password of the current level to 
+port 30001 on localhost using SSL/TLS encryption.
+
+Steps Taken: 
+Step 1: Login to Level 15 with the help of the username (bandit15) and password retrieved in 
+        the previous level, via the ssh command. 
+        Command Used: ssh bandit15@bandit.labs.overthewire.org -p 2220
+Step 2: Establish a connection to the local host at port 30001 using SSL/TLS encryption. 
+        Command Used: openssl s_client -connect localhost:30001 
+Step 3: Submit the password of the current level and retrieve the password to the next level. 
+
+Commands used: 
+1) ssh 
+2) openssl 
+
+Concepts learnt: 
+1) openssl: it is a cryptography toolkit used to implement ssl and tls network protocols. It can 
+be used with various commands to perform different tasks. 
+The openssl s_client command helps us to establish a connection with a remote host. The data transfer 
+here is done with the help of ssl/tls protocols. 
+
+NOTE: when a connection is established with the remote host using openssl s_client, everything that
+is typed on the keyboard is transferred to the remote server, until EOF(end of file). 
+The connection can be opened either in basic or advanced mode. When the connection is in interactive
+mode (neither -ign_eof or -quiet flag is used), the letters Q, R, K, k act as commands for the server. 
+Hence, the passwords starting with these letters won't give us the required output (password for next
+level) in this level. 
+Therefore, openssl s_client is used with -ign_eof or -quiet flag to ignore these letters (or commands)
+Required Command: openssl s_client -connect -ign_eof localhost:30001
