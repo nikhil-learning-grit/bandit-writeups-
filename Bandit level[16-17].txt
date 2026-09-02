@@ -1,0 +1,43 @@
+Objective: To retrieve the password (next level) by submitting the password of the current level to a port on localhost in the range 
+31000 to 32000.
+
+According to the information given in the level, the specific port to submit the password will be found as follows: 
+a) finding out which ports have a server listening on them 
+b) finding which one of those can be connected via SSL/TLS
+
+Steps Taken: 
+Step 1: Login to Level 16 with the help of the username (bandit16) and password retrieved in 
+        the previous level, via the ssh command. 
+        Command Used: ssh bandit16@bandit.labs.overthewire.org -p 2220
+Step 2: Find out which ports have a server listening on them, via port scanning. 
+        Command Used: nmap localhost -p31000-32000 
+Step 3: Once, we've found the ports, we can directly use openssl to check if each of the given ports can be connected using SSL/TLS and
+        and whether the next password can be retrieved by sending the password of the current level to them. 
+        For this, we're going to use the for loop, as shown below: 
+        Command Used: for i in 31046 31518 31691 31790 31960; do 
+                        echo "YOUR_PASSWORD" | openssl s_client -connect localhost:"$i" -quiet 
+                        done 
+
+Commands Used: 
+1) ssh
+2) nmap 
+3) openssl 
+
+Concepts Learnt: 
+1) nmap tool: It is a very powerful tool in linux command line. It is used for port scanning, network discovery and security auditing. 
+It is used a lot by the cybersecurity professionals. We're using the port scanning application of this tool. In this level, we used 
+nmap to find out which ports have a server listening on them. 
+2) for loops: for loops can be used in linux to automate repititive tasks. The syntax for the for loop is as follows: 
+Syntax: for variable in list_of_items
+do
+    commands_to_run
+done
+
+NOTE: when a connection is established with the remote host using openssl s_client, everything that
+is typed on the keyboard is transferred to the remote server, until EOF(end of file). 
+The connection can be opened either in basic or advanced mode. When the connection is in interactive
+mode (neither -ign_eof or -quiet flag is used), the letters Q, R, K, k act as commands for the server. 
+Hence, the passwords starting with these letters won't give us the required output (password for next
+level) in this level. 
+Therefore, openssl s_client is used with -ign_eof or -quiet flag to ignore these letters (or commands)
+Required Command: openssl s_client -connect -ign_eof localhost:30001
