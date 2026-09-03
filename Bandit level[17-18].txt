@@ -1,0 +1,20 @@
+Objective: The objective of this level is to retrieve the password by finding the only line that has been
+changed in between the two files present in the homedirectory. The files are named as password.old and 
+password.new. 
+
+Steps taken: 
+1) Login to the next level 17 with the help of the RSA key that has been given to us. 
+   Command Used: ssh -i sshkey_file bandit17@bandit.labs.overthewire.org -p 2220 
+2) Find the lines that have been changed in the files password.old and password.new using 
+   diff command. 
+   Command Used: diff -u password.old password.new 
+
+Commands used: 
+1) diff 
+2) ssh 
+
+Concepts Learned: 
+1) The diff command: The diff utility helps us compare different files line by line. The -u flag in the utility 
+is used to get a detailed report of how the files have been changed, which lines have been removed and which 
+ones have been added to the file. 
+
