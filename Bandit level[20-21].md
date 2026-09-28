@@ -30,7 +30,7 @@ nc -l localhost 1234
 ```
 **Note:** For performing step 3 and step 4 simultaneously on one screen, multiple terminal sessions were opened using the tmux command (terminal multiplexer) followed by the pressing (Ctrl + B + " (shift + ')).
 
-5. On the listening terminal, type the password of the current level and press enter. It thus displays the password for the next level. 
+5. On listening terminal, type the password of the current level and press enter. It thus displays the password for the next level. 
 
 ### Commands Used: 
 1. tmux
